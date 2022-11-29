@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+
+  web:
+    build: .
+    image: ezjaba
+    restart: always
+    volumes:
+      - "$PWD/flag:/flag:ro"
+    ports:
+      - 9999:8080
+    tty: true
+    networks:
+      - net
+      
+networks:
+    # 配置docker network
+    net: 
+      external: 
+         name: h1ve_frp_containers

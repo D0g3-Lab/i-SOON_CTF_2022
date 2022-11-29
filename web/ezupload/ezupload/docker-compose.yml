@@ -1,0 +1,18 @@
+version: '2'
+services:
+  service:
+    build: .
+    image: ezupload
+    ports:
+        - "9999:80"
+    volumes:
+        - "$PWD/flag:/fl1111111111ag"
+    stdin_open: true
+    tty: true
+    networks:
+        - net
+
+networks:
+    net:
+      external:
+          name: h1ve_frp_containers

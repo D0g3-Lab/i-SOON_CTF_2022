@@ -1,0 +1,19 @@
+FROM polytropo/dev-php-base
+
+
+ENV SHELL=/bin/bash
+
+COPY src/ /var/www/html
+COPY flag /f1111llllllaagg
+COPY ./run.sh /var/www/run.sh
+RUN chmod +x /var/www/run.sh
+
+
+RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini \
+    && sed -i '1342 s/;//g' /usr/local/etc/php/php.ini  \
+    && sed -i '943 s/;//g' /usr/local/etc/php/php.ini
+
+
+
+
+EXPOSE 80

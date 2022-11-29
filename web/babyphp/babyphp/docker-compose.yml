@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  service:
+    build: .
+    image: babyphp
+    ports:
+      - "9999:80"
+    volumes:
+      - "$PWD/flag:/f1111llllllaagg:ro"
+
+    command:
+      - /var/www/run.sh
+
+    stdin_open: true
+    tty: true
